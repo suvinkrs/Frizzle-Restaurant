@@ -93,8 +93,8 @@ export default function CartPage() {
           )}
           {cartProducts?.length > 0 && cartProducts.map((product, index) => (
             <CartProduct
-              key={index}
               index={index}
+              key={product.id} // Use a unique identifier from the product as the key
               product={product}
               onRemove={removeCartProduct}
             />

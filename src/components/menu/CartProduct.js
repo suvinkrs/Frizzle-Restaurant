@@ -3,7 +3,7 @@ import Trash from "@/components/icons/Trash";
 import Image from "next/image";
 import { useContext } from "react";
 
-export default function CartProduct({product,onRemove,index}) {
+export default function CartProduct({index,product,onRemove}) {
   return (
     <div className="flex items-center gap-4 border-b py-4">
       <div className="w-24">
