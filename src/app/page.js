@@ -29,7 +29,7 @@ export default function Home() {
           mainHeader={'Contact us'}
         />
         <div className="mt-8">
-          <a className="text-4xl underline text-gray-500" href="tel:+46738123123">
+          <a className="text-4xl underline text-gray-500" href="tel:+91-7518101042">
             +91-7518101042
           </a>
         </div>

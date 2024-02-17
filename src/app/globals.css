@@ -6,7 +6,9 @@ section.hero{
     @apply block md:grid;
     grid-template-columns: .4fr .6fr;
 }
-
+body{
+    background-color:#ECE9E1;
+}
 select,
 input[type="email"],
 input[type="password"],
