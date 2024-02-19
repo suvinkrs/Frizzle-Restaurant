@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import DeleteButton from "@/components/DeleteButton";
 import Left from "@/components/icons/Left";
 import EditableImage from "@/components/layout/EditableImage";
@@ -22,10 +22,12 @@ export default function EditMenuItemPage() {
     fetch('/api/menu-items').then(res => {
       res.json().then(items => {
         const item = items.find(i => i._id === id);
+        // console.log(item);
         setMenuItem(item);
       });
     })
   }, []);
+  // console.log(menuItem);
 
   async function handleFormSubmit(ev, data) {
     ev.preventDefault();
@@ -83,24 +85,26 @@ export default function EditMenuItemPage() {
     return 'Not an admin.';
   }
 
-  return (
-    <section className="mt-8">
-      <UserTabs isAdmin={true} />
-      <div className="max-w-2xl mx-auto mt-8">
-        <Link href={'/menu-items'} className="button">
-          <Left />
-          <span>Show all menu items</span>
-        </Link>
-      </div>
-      <MenuItemForm menuItem={menuItem} onSubmit={handleFormSubmit} />
-      <div className="max-w-md mx-auto mt-2">
-        <div className="max-w-xs ml-auto pl-4">
-          <DeleteButton
-            label="Delete this menu item"
-            onDelete={handleDeleteClick}
-          />
+    // console.log('menuItem:', menuItem);
+
+    return (
+      <section className="mt-8">
+        <UserTabs isAdmin={true} />
+        <div className="max-w-2xl mx-auto mt-8">
+          <Link href={'/menu-items'} className="button">
+            <Left />
+            <span>Show all menu items</span>
+          </Link>
         </div>
-      </div>
-    </section>
-  );
-}
+        <MenuItemForm menuItem={menuItem} onSubmit={handleFormSubmit} />
+        <div className="max-w-md mx-auto mt-2">
+          <div className="max-w-xs ml-auto pl-4">
+            <DeleteButton
+              label="Delete this menu item"
+              onDelete={handleDeleteClick}
+            />
+          </div>
+        </div>
+      </section>
+    );
+  }

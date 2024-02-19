@@ -14,6 +14,7 @@ export default function MenuItemsPage() {
   useEffect(() => {
     fetch('/api/menu-items').then(res => {
       res.json().then(menuItems => {
+        // console.log(menuItems); // Log the fetched data to the console
         setMenuItems(menuItems);
       });
     })
@@ -34,7 +35,7 @@ export default function MenuItemsPage() {
         <Link
           className="button flex"
           href={'/menu-items/new'}>
-          <span>Crete new menu item</span>
+          <span>Create new menu item</span>
           <Right />
         </Link>
       </div>

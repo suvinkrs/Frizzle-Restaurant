@@ -25,7 +25,7 @@ function AuthLinks({status, userName}) {
   if (status === 'unauthenticated') {
     return (
       <>
-        <Link href={'/login'}>Login</Link>
+        <Link href={'/login'} className="hover:text-black">Login</Link>
         <Link href={'/register'} className="bg-primary rounded-full text-white px-8 py-2">
           Register
         </Link>
@@ -70,7 +70,7 @@ export default function Header() {
         <div
           onClick={() => setMobileNavOpen(false)}
           className="md:hidden p-4 bg-gray-200 rounded-lg mt-2 flex flex-col gap-2 text-center">
-          <Link href={'/'}>Home</Link>
+          <Link href={'/'} >Home</Link>
           <Link href={'/menu'}>Menu</Link>
           <Link href={'/#about'}>About</Link>
           <Link href={'/#contact'}>Contact</Link>
@@ -82,12 +82,12 @@ export default function Header() {
           <Link className="text-primary font-semibold text-2xl" href={'/'}>
             Frizzle Feast
           </Link>
-          <Link href={'/'}>Home</Link>
-          <Link href={'/menu'}>Menu</Link>
-          <Link href={'/#about'}>About</Link>
-          <Link href={'/#contact'}>Contact</Link>
+          <Link href={'/'} className="hover:text-black">Home</Link>
+          <Link href={'/menu'} className="hover:text-black">Menu</Link>
+          <Link href={'/#about'} className="hover:text-black">About</Link>
+          <Link href={'/#contact'} className="hover:text-black">Contact</Link>
         </nav>
-        <nav className="flex items-center gap-4 text-gray-500 font-semibold">
+        <nav className="flex items-center gap-4 text-gray-700 font-semibold">
           <AuthLinks status={status} userName={userName} />
           <Link href={'/cart'} className="relative">
             <ShoppingCart />

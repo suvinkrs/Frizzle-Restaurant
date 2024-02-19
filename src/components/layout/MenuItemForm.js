@@ -1,3 +1,4 @@
+"use client"
 import Plus from "@/components/icons/Plus";
 import Trash from "@/components/icons/Trash";
 import EditableImage from "@/components/layout/EditableImage";
@@ -20,11 +21,22 @@ export default function MenuItemForm({onSubmit,menuItem}) {
   useEffect(() => {
     fetch('/api/categories').then(res => {
       res.json().then(categories => {
+        // console.log("cat: ",categories);
         setCategories(categories);
       });
     });
   }, []);
 
+  useEffect(() => {
+    setImage(menuItem?.image || '');
+    setName(menuItem?.name || '');
+    setDescription(menuItem?.description || '');
+    setBasePrice(menuItem?.basePrice || '');
+    setSizes(menuItem?.sizes || []);
+    setCategory(menuItem?.category || '');
+    setExtraIngredientPrices(menuItem?.extraIngredientPrices || []);
+  }, [menuItem]);
+  
   return (
     <form
       onSubmit={ev =>

@@ -1,32 +1,32 @@
 import Image from "next/image";
 import toast from "react-hot-toast";
+export default function EditableImage({ link, setLink }) {
 
-export default function EditableImage({link, setLink}) {
 
   async function handleFileChange(ev) {
+
     const files = ev.target.files;
-    if (files?.length === 1) {
-      const data = new FormData;
-      data.set('file', files[0]);
-
-      const uploadPromise = fetch('/api/upload', {
-        method: 'POST',
-        body: data,
-      }).then(response => {
-        if (response.ok) {
-          return response.json().then(link => {
-            setLink(link);
-          })
-        }
-        throw new Error('Something went wrong');
-      });
-
-      await toast.promise(uploadPromise, {
-        loading: 'Uploading...',
-        success: 'Upload complete',
-        error: 'Upload error',
-      });
+    // console.log(ev.target.files[0]);
+    var reader = new FileReader();
+    reader.readAsDataURL(ev.target.files[0]);
+    reader.onload = () => {
+      // console.log(reader.result);
+      setLink(reader.result);
+      toast.success('Image uploaded successfully');
     }
+    reader.onerror = (error) => {
+      console.log("Error: ", error);
+      toast.error('Error uploading image');
+    }
+
+    // await toast.promise(uploadPromise, {
+    //   loading: 'Uploading...',
+    //   success: 'Upload complete',
+    //   error: 'Upload error',
+    // });
+
+    // Rest of your code...
+
   }
 
   return (
