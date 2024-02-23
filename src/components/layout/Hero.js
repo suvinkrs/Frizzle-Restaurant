@@ -5,18 +5,15 @@ export default function Hero() {
   return (
     <section className="hero md:mt-4">
       <div className="py-8 md:py-12">
-        <h1 className="text-4xl font-semibold">
+        <h1 className="text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-black via-red-800 to-red-500">
           Everything<br />
           is better<br />
-          with a&nbsp;
-          <span className="text-primary">
-            Crunch
-          </span>
+          with a Crunch
         </h1>
-        <p className="my-6 text-gray-500 text-sm">
+        {/* <p className="my-6 text-gray-500 text-sm">
           Indulge in irresistible fast food flavors, satisfying every craving with every bite, a taste sensation awaits you!
-        </p>
-        <div className="flex gap-4 text-sm">
+        </p> */}
+        <div className="flex pt-9 gap-4 text-sm">
           <button className="flex justify-center bg-primary uppercase flex items-center gap-2 text-white px-4 py-2 rounded-full">
             <Link href={'/menu'}>Order now</Link>
             <Right />
