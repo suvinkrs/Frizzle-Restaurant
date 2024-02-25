@@ -5,7 +5,7 @@ import { useContext } from "react";
 
 export default function CartProduct({index,product,onRemove}) {
   return (
-    <div className="flex items-center gap-4 border-b py-4">
+    <div className="flex items-center gap-1 border-b py-4">
       <div className="w-24">
         <Image width={240} height={240} src={product.image} alt={''} />
       </div>
