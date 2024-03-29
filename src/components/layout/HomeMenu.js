@@ -31,8 +31,11 @@ export default function HomeMenu() {
         {categories?.length > 0 && categories.map(c => (
           <div key={c._id}>
             <div className="text-center">
-              <button>
-                <Link href={`/menu#${c.name}`}>{c.name}</Link>
+              <button className="border-none inline">
+                <Link href={`/menu#${c.name}`} className="relative">
+                  <span class="absolute top-2 left-0 mt-2  h-full w-full rounded bg-primary"></span>
+                  <span class="fold-bold relative inline-block h-full w-full rounded border-2  bg-white px-3 py-1 text-base font-bold text-black transition duration-100 hover:bg-yellow-400 hover:text-gray-900">{c.name}</span>
+                  </Link>
               </button>
             </div>
           </div>
