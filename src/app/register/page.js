@@ -63,11 +63,11 @@ export default function RegisterPage() {
           onClick={() => signIn('google', {callbackUrl:'/'})}
           className="flex gap-4 justify-center">
           <Image src={'/google.png'} alt={''} width={24} height={24} />
-          Login with google
+          Register with google
         </button>
         <div className="text-center my-4 text-gray-500 border-t pt-4">
           Existing account?{' '}
-          <Link className="underline" href={'/login'}>Login here &raquo;</Link>
+          <Link className="underline text-primary" href={'/login'}>Login here &raquo;</Link>
         </div>
       </form>
     </section>
