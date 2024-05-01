@@ -4,11 +4,13 @@ export default function AddressInputs({addressProps,setAddressProp,disabled=fals
     <>
       <label>Phone</label>
       <input
+        required={true}
         disabled={disabled}
         type="tel" placeholder="Phone number"
         value={phone || ''} onChange={ev => setAddressProp('phone', ev.target.value)} />
       <label>Street address</label>
       <input
+        required={true}
         disabled={disabled}
         type="text" placeholder="Street address"
         value={streetAddress || ''} onChange={ev => setAddressProp('streetAddress', ev.target.value)}
